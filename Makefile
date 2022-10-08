@@ -38,7 +38,7 @@ hacktv: $(OBJS)
 # either detect macports or DESTDIR and act accordingly. However, for
 # now let's just assume it's only macports trying to build us.
 install:
-        mkdir -p $(DESTDIR)/bin/
+	mkdir -p $(DESTDIR)/bin/
 	cp -f hacktv $(DESTDIR)/bin/
 #OLD	cp -f hacktv $(PREFIX)/usr/local/bin/
 
