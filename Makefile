@@ -32,8 +32,15 @@ hacktv: $(OBJS)
 	$(CC) $(CFLAGS) -c $< -o $@
 	@$(CC) $(CFLAGS) -MM $< -o $(@:.o=.d)
 
+# Macports wants the install phase to be "make install DESTDIR=blah" 
+# (see https://guide.macports.org/chunked/reference.phases.html ) so 
+# to allow both macports and non-macports builds, we reallly should
+# either detect macports or DESTDIR and act accordingly. However, for
+# now let's just assume it's only macports trying to build us.
 install:
-	cp -f hacktv $(PREFIX)/usr/local/bin/
+        mkdir -p $(DESTDIR)/bin/
+	cp -f hacktv $(DESTDIR)/bin/
+#OLD	cp -f hacktv $(PREFIX)/usr/local/bin/
 
 clean:
 	rm -f *.o *.d hacktv hacktv.exe
