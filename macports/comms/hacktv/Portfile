@@ -7,13 +7,6 @@ PortGroup           github 1.0
 github.setup        kesterlester hacktv 0.0.4 v
 github.tarball_from releases
 
-#distfiles           archive/refs/tags/v0.0.1.tar.gz
-#distfiles           v0.0.4.tar.gz
-
-#name                hacktv
-#version             0.0.4
-#extract.suffix      .tar.gz
-
 categories          comms
 platforms           darwin
 license             GPL-3+
@@ -22,22 +15,12 @@ description         Broadcast TV using an SDR like HackRF One
 long_description    Broadcast TV using a Software Defined Radio like HackRF One
 homepage            https://github.com/kesterlester/hacktv
 
-#master_sites        https://github.com/kesterlester/hacktv/archive/refs/tags
-#master_sites        https://oss.oetiker.h/rrdtool/pub/ \
-#                    ftp://ftp.pucpr.br/rrdtool/
-
 checksums           sha256  f797b1030852a386b60d673ee237f438c0825697ad553cdd08ac5efae221ea0b \
+                    rmd160  ed5feeebba9de4ecf1acbeab2429c13e53a74821 \
                     size    255816
 
 depends_lib         port:ffmpeg-devel \
                     port:SoapySDR \
                     port:hackrf
-# depends_lib         path:bin/perl:perl5 \
-#                     port:tcl \
-#                     port:zlib
 
 use_configure       no
-
-# configure.args      --enable-perl-site-install \
-#                     --mandir=${prefix}/share/man
-
