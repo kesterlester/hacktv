@@ -37,9 +37,10 @@ hacktv: $(OBJS)
 # to allow both macports and non-macports builds, we reallly should
 # either detect macports or DESTDIR and act accordingly. However, for
 # now let's just assume it's only macports trying to build us.
+# Macports wants opt/local
 install:
 	mkdir -p $(DESTDIR)/bin/
-	cp -f hacktv $(DESTDIR)/bin/
+	install -c hacktv $(DESTDIR)/opt/local/bin/
 #OLD	cp -f hacktv $(PREFIX)/usr/local/bin/
 
 clean:
